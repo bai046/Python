@@ -106,7 +106,7 @@ else:
     print("没有循环数据!")
 print("完成循环!")
 
-#遍历数字序列，可以使用内置range(开始，结尾，步长)函数。它会生成数列
+#遍历数字序列，可以使用内置range(start，stop，step)函数,顾头不顾尾。它会生成数列
 for i in range(0, 10, 3) :
     print(i)
 
@@ -145,11 +145,11 @@ i = 1
 while i<=5:
 #第三步：编制循环内容
     if i==3:
-        #第四步：吃到第三个苹果有虫跳过
+        #第五步：吃到第三个苹果有虫跳过
         print("第{0}苹果有虫，吃下一个苹果".format(i))
         i+=1
         continue
-    #第三步：吃第i个苹果
+    #第四步：吃第i个苹果
     print("吃第{0}苹果".format(i))
     i+=1
     
@@ -163,6 +163,29 @@ for letter in 'Runoob':
 print ("Good bye!")
 
 
+
+sum=0
+for i in range(1,101):
+    sum=sum+i
+print(sum)
+   
+
+fruits='苹果3个,香蕉4个,哈密瓜8个'
+sumfruits=0
+x=0
+for i in range(len(fruits)):
+    if fruits[i]=='个':
+        sumfruits=sumfruits + int(fruits[i-1])
+        x+=1
+print("总共有{0}类，{1}个水果".format(x,sumfruits))
+
+
+
+for i in range(1,10):
+    for j in range(1,i+1):
+        print("{0}*{1}={2}".format(i,j,i*j),end="\t")
+    print("\n")
+    
 
 
 
