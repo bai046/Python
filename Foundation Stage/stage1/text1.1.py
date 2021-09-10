@@ -2,7 +2,7 @@
 '''
 52 郭淑瑛
 '''
-
+"""
 #1、求阶乘 例如：5!=5*4*3*2*1
 i=1
 j=5
@@ -54,7 +54,7 @@ for i in range(1,n):
         sum=i+1/i
 print("={0}".format(sum))
         
-
+"""
         
 #5、将1,2,3,4,5,6,7进行反转，反转结果为7,6,5,4,3,2,1
 list = [1,2,3,4,5,6,7]
@@ -68,7 +68,15 @@ for i in range(0,int(l/2)):
 print("反转后的结果：",list[0:l])
 
 
-        
+list = [1,2,3,4,5,6,7]
+i = 0
+l = int(len(list))
+print("反转前的结果：",list[0:l])
+for i in range(0,int(l/2)):
+    tmp = list[i]
+    list[i] = list[-(i+1)]
+    list[-(i+1)] = tmp
+print("反转后的结果：",list[0:l])    
         
     
         
