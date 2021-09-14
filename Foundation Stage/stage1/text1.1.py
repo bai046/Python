@@ -77,8 +77,9 @@ for i in range(0,int(l/2)):
     list[i] = list[-(i+1)]
     list[-(i+1)] = tmp
 print("反转后的结果：",list[0:l])    
-        
-    
+
+list = '1234567'       
+print(list[::-1])
         
         
         
