@@ -71,7 +71,27 @@ print ("dict['Name']: ", dict['Name'])
 
 #==============================================================================
 # 集合（set）是一个无序的不重复元素序列。
+# 可以使用大括号 { } 或者 set() 函数创建集合
+# 注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
+# 创建格式：
+# parame = {value01,value02,...}
+# 或者
+# set(value)
 #==============================================================================
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)    # 这里演示的是去重功能
+
+#将元素 x 添加到集合 s 中，如果元素已存在，则不进行任何操作。
+thisset = set(("Google", "Runoob", "Taobao"))
+thisset.add("Facebook")
+print(thisset)
+thisset.update({1,3})
+print(thisset)
+#{1, 3, 'Google', 'Taobao', 'Runoob'}
+thisset.update([1,4],[5,6])  
+print(thisset)
+#{1, 3, 4, 5, 6, 'Google', 'Taobao', 'Runoob'}
+
 
 
 
