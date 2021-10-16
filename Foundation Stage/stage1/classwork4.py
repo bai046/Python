@@ -3,6 +3,7 @@
 Created on Wed Oct 13 14:12:40 2021
 
 @author: 瑛
+学生信息管理-函数版封装版
 """
 from Package.textdef1 import add_info_name
 from Package.textdef1 import add_info_age

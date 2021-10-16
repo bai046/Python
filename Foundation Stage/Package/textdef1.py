@@ -3,6 +3,7 @@
 Created on Wed Oct 13 14:11:57 2021
 
 @author: 瑛
+classwork4函数库
 """
 info_list = [{"name": '张三', "mobile": '15879054953', "age": 23}]
 
