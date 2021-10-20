@@ -25,8 +25,20 @@ def Read_Write_File(filePath,mode_Type,Ope_Choice,size = None):
     else:
         print("请填写操作类型（read|write）")
 
-    
-
+import csv
+def Read_CSV_TOList(filePath,fileName):
+    '''
+    完整文件路径（D:\Python\Foundation Stage\stage1+text.py）
+    filePath:D:\Python\Foundation Stage\stage1
+    fileName:text.py
+    '''
+    full_FilePath = filePath + fileName
+    f = open(full_FilePath,mode="r",encoding="utf-8")
+    Lines = csv.reader(f)
+    data = []# 用来保存csv里数据
+    for line in Lines:
+        data.append(line)
+    return data
     
 
 
