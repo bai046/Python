@@ -21,3 +21,5 @@ print("-"*30)
 
 file3 = np.loadtxt("./dataset/豆瓣电影数据.csv",skiprows=1,dtype=str,usecols=(0,1))
 print(file3)
+
+
