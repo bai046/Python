@@ -8,7 +8,7 @@ Created on Thu Nov 11 11:17:57 2021
 #import numpy as np
 import pandas as pd
 
-data1 = pd.read_csv("../data/green1.csv")
+data1 = pd.read_csv("./dataset/green_tripdata_2014-04.csv")
 #第一题
 #1.Pickup_longitude、Pickup_latitude、Dropoff_longitude、Dropoff_latitude、Passenger_count、Fare_amount列
 t1 = data1.iloc[:, 5:12]
@@ -36,7 +36,7 @@ data2[(data2['上车经度'] > -73.89) & (data2['上车纬度']>40.8)&
 
 #第四题
 #将两个文件最终的数据最终合并在一个文件里.
-data3 = pd.read_csv("../data/green2.csv")
+data3 = pd.read_csv("./dataset/green_tripdata_2014-05.csv")
 
 frames = [data1, data3]
 

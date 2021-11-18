@@ -21,7 +21,7 @@ print(pd.columns)
 取出Pickup_longitude（>-73.89）、Pickup_latitude(<40.8)、
 Dropoff_longitude(>-73.9)、Dropoff_latitude(<40.8)的数据
 '''
-dpd = pd[pd['Pickup_longitude']!=0]
+dpd = pd[pd['上车经度']!=0]
 #dpd = pd.drop(index=pd[pd['Pickup_longitude']==0].index[0])
 print(dpd)
 
@@ -32,11 +32,5 @@ dataset2 = pd2.loc[(dpd['Pickup_longitude'].astype(float) >-73.89) | (pd2['Picku
 , ['Pickup_longitude','Pickup_latitude','Dropoff_longitude','Dropoff_latitude']]
 print(dataset2)
 
-'''
-#列合并:设置concat函数中的axis=1即可实现
-file = [dataset,dataset2]
-train = pd.concat(file,axis=1)
-train.to_csv("./dataset/green3" + ".csv", index=0, sep=',')
-f1 = pd.read_csv('./dataset/green3.csv')
-print(f1)
-'''
+
+

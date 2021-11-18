@@ -1,44 +1,33 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 11 08:13:38 2021
+Created on Wed Nov 17 11:21:09 2021
 
 @author: 瑛
-"./dataset/green_tripdata_2014-04.csv"
-"./dataset/green_tripdata_2014-05.csv"
 """
 import pandas as pd
-#import numpy as np
-df = pd.read_csv("./dataset/green_tripdata_2014-04.csv", header=0, encoding='utf-8', dtype=str)
-df2 = pd.read_csv("./dataset/green_tripdata_2014-05.csv", header=0, encoding='utf-8', dtype=str)
-#print(df.columns)
-df.rename(columns={"Pickup_longitude":"上车经度"
-                   ,"Pickup_latitude":"上车纬度"
-                   ,"Dropoff_longitude":"下车经度"
-                   ,"Dropoff_latitude":"下车纬度"
-                   ,"Passenger_count":"乘客人数"
-                   ,"Fare_amount":"费用"},inplace=True)
-df2.rename(columns={"Pickup_longitude":"上车经度"
-                   ,"Pickup_latitude":"上车纬度"
-                   ,"Dropoff_longitude":"下车经度"
-                   ,"Dropoff_latitude":"下车纬度"
-                   ,"Passenger_count":"乘客人数"
-                   ,"Fare_amount":"费用"},inplace=True)
-print(df.columns)
+df4 = pd.read_csv("./dataset/green_tripdata_2014-04.csv", header=0,nrows=20)
+df5 = pd.read_excel("./dataset/green_tripdata_2014-05.csv", header=0,nrows=20)
 
-ddf = df[df[:]!=0]
-print(ddf)
+#打印列名
+print(df4.columns)
+'''
+Index(['VendorID', 'lpep_pickup_datetime', 'Lpep_dropoff_datetime',
+       'Store_and_fwd_flag', 'RateCodeID', 'Pickup_longitude',
+       'Pickup_latitude', 'Dropoff_longitude', 'Dropoff_latitude',
+       'Passenger_count', 'Trip_distance', 'Fare_amount', 'Extra', 'MTA_tax',
+       'Tip_amount', 'Tolls_amount', 'Ehail_fee', 'Total_amount',
+       'Payment_type', 'Trip_type '],
+      dtype='object')
+'''
+#取单列
+print(df4['Pickup_longitude'])
+#多列location  loc[行,列]
+print(df4.loc[:,['VendorID','lpep_pickup_datetime']])
+print(df4.loc[0:5,1:4])
 
-#使用“或”条件进行筛选
-dataset = ddf.loc[(ddf['上车经度'] >-73.89) | (ddf['上车纬度'] <40.8)| (ddf['下车经度'] >73.9)| (ddf['下车纬度'] <40.8)
-, ['上车经度','上车纬度','下车经度','下车纬度']]
-print(dataset)
 
-import os
-path = './dataset/'
-files = os.listdir(path)
-train_csv = list(filter(lambda x:(x[0:6] == 'train_' and x[-4:] == '.csv'),files))
-data_list = []
-for fileitem in train_csv:
-    tmp = pd.read_csv(path + fileitem,header=0)
-    data_list.append(tmp)
-dataset = pd.concat(data_list,ignore_index = False)
+
+all_csv = pd.concat([df4, df5])
+all_csv.to_csv('test2.csv')
+
+
